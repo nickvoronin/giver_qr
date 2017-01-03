@@ -1,0 +1,92 @@
+@import '_normalize.css';
+
+* {
+	box-sizing: border-box;
+	font-family: 'Fredoka One', sans-serif;
+}
+
+body {
+	background: #FAFAFA;
+}
+
+/* Общий стиль, используемый для скрытия/отображенияэлементов */
+.invisible {
+	display: none !important;
+}
+
+.screen__login--verdict {
+	padding: 5vh;
+	color: #FF7043;
+	font-size: 10vh;
+	text-align: center;
+}
+
+.screen__login--verdict {
+	color: #f44336;
+}
+
+button, input{
+	display: block;
+	margin: 10vh auto;
+	padding: 1vh;
+	width: 40vh;
+	border: 0;
+	border-radius: 8px;
+	color: #fff;
+	font-weight: 300;
+	font-size: 5vh;
+	transition: all, .2s;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:hover {
+	margin-top: 11vh;
+	margin-bottom: 9vh;
+}
+
+button:hover + button {
+	margin-top: 9vh;
+}
+
+
+
+input:hover {
+	margin-top: 11vh;
+	margin-bottom: 9vh;
+	outline: none;
+	box-shadow: 0 0 #F57F17;
+}
+
+input:hover + input {
+	margin-top: 9vh;
+}
+
+input:hover + .btn__action {
+	margin-top: -9vh;
+}
+
+.btn__action {
+	background-color: #E96781;
+	box-shadow: 0 1vh #C0526B;
+}
+
+.btn__action:hover {
+	box-shadow: 0 0 #C0526B;
+}
+
+.input__login, .input__password {
+	background-color: #F9A825;
+	box-shadow: 0 1vh #F57F17;
+}
+
+.input__submit {
+	background-color: #E96781;
+	box-shadow: 0 1vh #C0526B;
+}
+
+.input__submit:hover {
+	box-shadow: 0 0 #C0526B;
+}

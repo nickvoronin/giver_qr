@@ -1,0 +1,12 @@
+# ignore IDE files
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# other
+log/
+node_modules/
+.directory
+
+# temporary build files
+public/js/app.min.js

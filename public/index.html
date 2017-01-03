@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GiverQR</title>
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+	<div class="screen__login">
+		<div class="screen__login--verdict">GiverQR Scanner</div>
+		<form>
+			<input type="email" class="screen__login--input input__login" placeholder="Введите логин"/>
+			<input type="password" class="screen__login--input input__password" placeholder="Введите пароль" />
+			<input type="button" class="screen__login--input input__submit" data-action="login" value="Войти" />
+		</form>
+	</div>
+
+	<div class="screen__scanner invisible">
+		<div class="screen__login--verdict">GiverQR Scanner</div>
+		<button class="screen__login--btn  btn__action" data-action="info">Сканировать</button>
+	</div>
+
+	<div class="screen__info invisible">
+		<div class="screen__login--verdict">GiverQR Scanner</div>
+		<div class="screen__login--verdict">Великолепно!</div>
+		<button class="screen__login--btn  btn__action" data-action="scan">Сканировать ещё</button>
+	</div>
+
+	<script src="/js/app.min.js"></script>
+</body>
+</html>
