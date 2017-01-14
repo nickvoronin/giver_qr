@@ -10,3 +10,8 @@ node_modules/
 
 # temporary build files
 public/js/app.min.js
+
+
+#ssl certificate files
+cert.pem
+key.pem
