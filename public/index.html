@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>GiverQR</title>
-	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-	<link rel="stylesheet" href="/css/main.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Giver QR Scanner</title>
+		<link rel="stylesheet" href="/static/qrscanner/css/style.css">
+		<link rel="shortcut icon" href="/static/qrscanner/img/favicon.png" type="image/png">
+	</head>
 
-<body>
-	<div class="screen__login">
-		<div class="screen__login--verdict">GiverQR Scanner</div>
-		<form>
-			<input type="email" class="screen__login--input input__login" placeholder="Введите логин"/>
-			<input type="password" class="screen__login--input input__password" placeholder="Введите пароль" />
-			<input type="button" class="screen__login--input input__submit" data-action="login" value="Войти" />
-		</form>
-	</div>
+	<body>
+		
+		<div id="console" class="console">
+		</div>
+	
+		<div id="loadingLayout" class="modal hidden">
+			<img class="loading" src="/static/qrscanner/img/loading.svg" alt="loading.."></img>
+		</div>
+	
+		<div id="modalBoxLayout" class="modal hidden">
+		  <div id="content">
+			<span id="modalBoxCloseButton" class="close">&times;</span>
+			<p id="modalBoxText"></p>
+		  </div>
+		</div>
+		
+		<div id="authLayout" class="hidden">
+			<div class="auth-flex">
+				<div class="auth-box">
+					<div id="header">
+						<img src="/static/qrscanner/img/logo.svg" alt="giver.md"></img>
+						<div id="title">Авторизация</div>
+					</div>
+					<div id="content">
+						<form id="authForm" method="post">
+							<input type="email" name="email" placeholder="Email" autocomplete="on" required></input>
+							<input type="password" name="pass" placeholder="Пароль" autocomplete="on" required></input>
+							<input id="authProceedButton" class="effect" type="submit" value="Отправить"></input>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="streamLayout" class="hidden">
+			<div class="header">
+				<img id="headerGiverButton" src="/static/qrscanner/img/logo.png" title="Перейти на https://www.giver.md" alt="giver.md"></img>
+				<img id="headerStreamButton" class="active" src="/static/qrscanner/img/stream.png" title="Сканирование в реальном времени" alt=""></img>
+				<img id="headerUploadButton" src="/static/qrscanner/img/upload.png" title="Сканирование фотографии" alt=""></img>
+				<img class="last" id="headerLogoutButton" src="/static/qrscanner/img/logout.png" title="Выход" alt=""></img>
+			</div>
+			
+			<canvas id="canvas"></canvas>
+			
+			<div class="content-overlay">
+				<img id="streamOverlay" class="hidden" src="/static/qrscanner/img/capture.png"></img>
+			</div>
+			<div class="content">
+				<video id="streamVideo" autpolay></video>
+			</div>
+		</div>
 
-	<div class="screen__scanner invisible">
-		<div class="screen__login--verdict">GiverQR Scanner</div>
-		<button class="screen__login--btn  btn__action" data-action="info">Сканировать</button>
-	</div>
-
-	<div class="screen__info invisible">
-		<div class="screen__login--verdict">GiverQR Scanner</div>
-		<div class="screen__login--verdict">Великолепно!</div>
-		<button class="screen__login--btn  btn__action" data-action="scan">Сканировать ещё</button>
-	</div>
-
-	<script src="/js/app.min.js"></script>
-</body>
+		<div id="uploadLayout" class="hidden">
+			<div class="header">
+				<img id="headerGiverButton" src="/static/qrscanner/img/logo.png" title="Перейти на https://www.giver.md" alt="giver.md"></img>
+				<img id="headerStreamButton" src="/static/qrscanner/img/stream.png" title="Сканирование в реальном времени" alt=""></img>
+				<img id="headerUploadButton" class="active" src="/static/qrscanner/img/upload.png" title="Сканирование фотографии" alt=""></img>
+				<img class="last" id="headerLogoutButton" src="/static/qrscanner/img/logout.png" title="Выход" alt=""></img>
+			</div>
+		
+			<div class="content">
+				<img id="uploadTrigger" src="/static/qrscanner/img/upload-photo.png"><img>
+				<input id="uploadInput" type="file" name="photo" accept="image/*"/>
+			</div>
+		</div>
+		
+		<script src="/static/qrscanner/js/client.min.js"></script>
+		<script src="/static/qrscanner/js/es5-shim.min.js"></script>
+		<script src="/static/qrscanner/js/es6-shim.min.js"></script>
+		<script src="/static/qrscanner/js/qrcode-decoder.js"></script>
+		<script src="/static/qrscanner/js/app.min.js"></script>
+		
+	</body>
 </html>

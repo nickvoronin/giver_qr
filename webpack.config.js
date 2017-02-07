@@ -4,7 +4,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].min.js',
-		path: 'public/js/',
+		path: 'public/static/qrscanner/js/',
 	},
 	module: {
 		loaders: [
